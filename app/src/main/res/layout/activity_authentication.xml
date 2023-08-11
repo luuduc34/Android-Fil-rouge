@@ -12,44 +12,56 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:src="@drawable/bg_jeankevin_full"
-    app:layout_constraintTop_toBottomOf="@+id/infobulle"
     android:layout_gravity="center"
-    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/triangleBubble"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"/>
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"/>
   <androidx.constraintlayout.widget.ConstraintLayout
       android:id="@+id/infobulle"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:orientation="horizontal"
+      android:background="@drawable/input_rounded_background"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintBottom_toTopOf="@+id/triangleBubble"
+      android:layout_marginHorizontal="80dp"
+      android:paddingVertical="30dp"
+      android:layout_marginTop="30dp">
+
+  <TextView
+      android:id="@+id/infoBulleTextTop"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintBottom_toTopOf="@+id/bg_jeankevin"
-      android:layout_marginHorizontal="50dp">
+      app:layout_constraintBottom_toTopOf="@+id/infoBulleTextBottom"
+      android:text="Hey ! Komen Ksé ?!"
+      android:gravity="center"
+      android:textColor="@color/pink"
+      android:textStyle="bold"/>
+  <TextView
+      android:id="@+id/infoBulleTextBottom"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/infoBulleTextTop"
+      app:layout_constraintBottom_toBottomOf="parent"
+      android:text="Allez... Connecte-toi !"
+      android:gravity="center"/>
 
-<TextView
-    android:id="@+id/infoBulleText"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/input_rounded_background"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintBottom_toBottomOf="parent"
-    android:text="Hello world !"
-    android:gravity="center"
-    android:height="60dp"/>
-    <ImageView
-        android:id="@+id/triangleBubble"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/bg_bubble_triangle"
-        app:layout_constraintTop_toBottomOf="@+id/infoBulleText"
-        app:layout_constraintEnd_toEndOf="@+id/infoBulleText"
-        android:layout_marginRight="50dp"
-        />
   </androidx.constraintlayout.widget.ConstraintLayout>
+  <ImageView
+      android:id="@+id/triangleBubble"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:src="@drawable/bg_bubble_triangle"
+      app:layout_constraintTop_toBottomOf="@+id/infobulle"
+      app:layout_constraintEnd_toEndOf="@+id/infobulle"
+      android:layout_marginRight="50dp"
+      />
   <LinearLayout
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
@@ -61,7 +73,8 @@
       app:layout_constraintVertical_bias="1.0"
       android:orientation="vertical"
       android:padding="20dp"
-      android:background="@color/light_grey">
+      android:background="@drawable/rounded_top_corners"
+      >
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/emailLayout"
@@ -69,7 +82,7 @@
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginVertical="15dp"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         app:errorIconDrawable="@drawable/ico_cross_rose"
         app:startIconDrawable="@drawable/ico_profile_blue"
@@ -81,7 +94,7 @@
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:hint="Ton email"
-
+          android:background="@android:color/transparent"
           />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -92,7 +105,7 @@
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         app:errorIconDrawable="@drawable/ico_cross_rose"
@@ -104,15 +117,19 @@
           android:id="@+id/passwordEditText"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:hint="Ton mot de passe"/>
+          android:hint="Ton mot de passe"
+          android:background="@android:color/transparent"/>
 
     </com.google.android.material.textfield.TextInputLayout>
    <com.google.android.material.button.MaterialButton
+       android:id="@+id/connectButton"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
        android:text="Se connecter"
        android:layout_marginTop="20dp"
-       android:layout_marginHorizontal="20dp"/>
+       app:backgroundTint="@null"
+       android:layout_marginHorizontal="100dp"
+       android:paddingVertical="15dp"/>
   </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
