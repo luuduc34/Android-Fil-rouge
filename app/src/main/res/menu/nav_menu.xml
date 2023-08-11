@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/homeFragment"
+        android:title="Home"
+        android:icon="@drawable/ico_house_white"
+        app:showAsAction="ifRoom|withText"/>
+    <item
+        android:id="@+id/foodFragment"
+        android:title="Food"
+        android:icon="@drawable/ico_pizza_white"
+        app:showAsAction="ifRoom|withText"/>
+    <item
+        android:id="@+id/funFragment"
+        android:title="Fun"
+        android:icon="@drawable/ico_laugh_white"
+        app:showAsAction="ifRoom|withText"/>
+    <item
+        android:id="@+id/moveFragment"
+        android:title="Move"
+        android:icon="@drawable/ico_car_white"
+        app:showAsAction="ifRoom|withText"/>
+</menu>
